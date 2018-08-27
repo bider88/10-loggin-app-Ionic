@@ -12,6 +12,7 @@ import { firebaseConfig } from '../config/firebase.config';
 
 // Plugins
 import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 // Provider
 import { UserProvider } from '../providers/user/user';
@@ -44,6 +45,7 @@ import { LoginPage } from '../pages/login/login';
     SplashScreen,
     AngularFireDatabase,
     Facebook,
+    GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider
   ]

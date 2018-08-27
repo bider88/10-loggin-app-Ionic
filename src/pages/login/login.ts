@@ -10,6 +10,8 @@ import { HomePage } from '../home/home';
 import { Platform } from 'ionic-angular';
 import { Facebook } from '@ionic-native/facebook';
 
+import { GooglePlus } from '@ionic-native/google-plus';
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -23,6 +25,8 @@ export class LoginPage {
     private platform: Platform,
     // Declara el modulo de Facebook en el app.module.ts
     private fb: Facebook,
+    // Declara el modulo de GooglePlus en el app.module.ts
+    private googlePlus: GooglePlus,
     private _userProvider: UserProvider
   ) {
   }

@@ -86,4 +86,7 @@
         <variable name="APP_NAME" value="Login App" />
     </plugin>
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.232130546968-4710uth6jp65bvfesk24nt20r5chmt8u" />
+    </plugin>
 </widget>
