@@ -10,6 +10,9 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseConfig } from '../config/firebase.config';
 
+// Plugins
+import { Facebook } from '@ionic-native/facebook';
+
 // Provider
 import { UserProvider } from '../providers/user/user';
 
@@ -40,6 +43,7 @@ import { LoginPage } from '../pages/login/login';
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider
   ]
