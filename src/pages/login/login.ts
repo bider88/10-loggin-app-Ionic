@@ -31,6 +31,37 @@ export class LoginPage {
   ) {
   }
 
+  signInGoogle() {
+
+    this.googlePlus.login({
+      'webClientId': '232130546968-canv082j4bm6g9grh9temvstp0os67id.apps.googleusercontent.com',
+      'offline': true
+    }).then( res => {
+
+      firebase.auth().signInAndRetrieveDataWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken))
+      .then( ( res: any ) => {
+
+        console.log( JSON.stringify(res) );
+
+        const { displayName: name, email, photoURL: image, uid } = res.user;
+          const provider = 'Google';
+
+          const user: User = {
+            name, email, image, uid, provider
+          }
+
+          this._userProvider.loadUser(user);
+
+          this.navCtrl.setRoot(HomePage);
+
+      })
+      .catch( error => console.log("Firebase failure: " + JSON.stringify(error)));
+
+    })
+      .catch(err => console.error(err));
+
+  }
+
   signInWithFacebook() {
 
     if (this.platform.is('cordova')) {
